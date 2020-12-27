@@ -1,0 +1,7 @@
+{
+    "slaveApiEndpiont" : "http://10.0.0.188:8000/slaves_app/Slaves/",
+    "slaveAddressApi" : "http://10.0.0.188:8000/slaves_app/MemoryZone/",
+    "slaveControl" : "http://10.0.0.188:8000/slaves_app/control/",
+    "dataApi":"http://10.0.0.188:8000/slaves_app/data/"
+
+}
