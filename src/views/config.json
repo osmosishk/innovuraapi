@@ -1,7 +1,9 @@
 {
-    "slaveApiEndpiont" : "http://10.0.0.188:8000/slaves_app/Slaves/",
-    "slaveAddressApi" : "http://10.0.0.188:8000/slaves_app/MemoryZone/",
-    "slaveControl" : "http://10.0.0.188:8000/slaves_app/control/",
-    "dataApi":"http://10.0.0.188:8000/slaves_app/data/"
+    "slaveApiEndpiont" : "http://192.168.86.190:8000/slaves_app/Slaves/",
+    "slaveAddressApi" : "http://192.168.86.190:8000/slaves_app/MemoryZone/",
+    "slaveControl" : "http://192.168.86.190:8000/slaves_app/control/",
+    "dataApi":"http://192.168.86.190:8000/slaves_app/data/",
+    "redisApi":"http://192.168.86.190:8000/slaves_app/redis/"
+
 
 }

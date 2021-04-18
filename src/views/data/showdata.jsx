@@ -10,6 +10,8 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
+    ListGroup,
+    ListGroupItem,
     Dropdown,
     UncontrolledDropdown,
     ButtonDropdown,
@@ -30,6 +32,7 @@ class Showdata extends Component {
         this.state = { 
             data :[],
             tranformeddata :[],
+            redisdata : [],
             formsubmited: false
         }
        
@@ -40,7 +43,8 @@ class Showdata extends Component {
 
     componentDidMount() {
         
-            this.getData();
+           // this.getData();
+            this.getRedisData();
           
           
     }
@@ -57,6 +61,22 @@ class Showdata extends Component {
           this.setState({tranformeddata:this.flatten(this.state.data)})
       } 
 
+      async getRedisData()
+      {
+         
+          await axios.get(config.redisApi)
+                  .then((response) => {
+                   
+                    this.setState({redisdata:response.data});
+                   }).catch(function (error) {
+                    console.log(error);
+                 });
+
+            
+           this.setState({tranformeddata:this.state.redisdata})
+         
+      } 
+
  
     
     objectIntoTableData(object) {
@@ -66,6 +86,17 @@ class Showdata extends Component {
                 
                 return  <td key={index}>{data}</td>;
             }
+            if (index ===0)
+            {
+                
+                return  <td key={index}>{data}</td>;
+            }
+            if (index ===2)
+            {
+                
+                return  <td key={index}>{data}</td>;
+            }
+
             else
             {
                 var number = parseFloat(data).toFixed(3)
@@ -77,6 +108,7 @@ class Showdata extends Component {
 
     tableRows(data) {
         return data.map(value => {
+         
           return <tr key={value.index}>{this.objectIntoTableData(value)}</tr>;
         });
        }
@@ -127,8 +159,9 @@ class Showdata extends Component {
     
     render() { 
         const columns = this.getHeader();  
-       
-
+        
+        
+        
         return ( 
          
             <Row>
@@ -176,9 +209,11 @@ class Showdata extends Component {
                 </Col>
               </Row>
                 </CardTitle>
+
               
                 <CardBody className="">
-                        
+                  
+                  
                         <Table responsive>
                             <thead>
                                 <tr>

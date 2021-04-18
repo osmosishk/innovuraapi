@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardBody, Row, Col , Button} from 'reactstrap';
+import { Card, CardBody, Row} from 'reactstrap';
 import axios from "axios";
-import {
-    SalesSummary,
-    Stats,
-    Firstdata,
-    BlogPost,
-    SalesOverview,
-    Visits,
-   
-}
-from '../../components/dashboard';
+
 import config from '../config.json';
 import StatusAlert from './status';
 import Seconddata from './seconddata';
@@ -66,7 +57,7 @@ class Index extends Component {
                         <CardBody>
                             <div className="d-md-flex align-items-center">
                                 <div>
-                                    <h4 className="card-title">Slave Status</h4>
+                                    <h4 className="card-title">Slave Status v1.1</h4>
                                 </div>
                                 
                             </div>
@@ -81,7 +72,7 @@ class Index extends Component {
                             
                         </CardBody>
                     </Card>
-           
+            
            
             <Seconddata />
             <Row>
